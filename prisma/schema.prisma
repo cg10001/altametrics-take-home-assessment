@@ -1,10 +1,12 @@
 generator client {
   provider = "prisma-client-js"
+  output   = "client"
+  binaryTargets = ["linux-musl-openssl-3.0.x", "windows"]
 }
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url      = "postgresql://postgres:postgres@localhost:5432/postgres?schema=public"
 }
 
 model User {

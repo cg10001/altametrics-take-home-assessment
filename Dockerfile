@@ -63,7 +63,7 @@ COPY package.json .
 COPY --chown=node:node --from=deps /usr/src/app/node_modules ./node_modules
 COPY --chown=node:node --from=build /usr/src/app/dist ./dist
 COPY --chown=node:node tsconfig.json .
-
+COPY --chown=node:node prisma ./prisma/
 # Expose the port that the application listens on.
 EXPOSE 3000
 
