@@ -172,13 +172,13 @@ const config = {
   "inlineDatasources": {
     "db": {
       "url": {
-        "fromEnvVar": null,
-        "value": "postgresql://postgres:postgres@localhost:5432/postgres?schema=public"
+        "fromEnvVar": "DATABASE_URL",
+        "value": "postgresql://postgres:postgres@localhost:5432/postgres/mydb?schema=public"
       }
     }
   },
-  "inlineSchema": "generator client {\n  provider      = \"prisma-client-js\"\n  output        = \"client\"\n  binaryTargets = [\"linux-musl-openssl-3.0.x\", \"windows\"]\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = \"postgresql://postgres:postgres@localhost:5432/postgres?schema=public\"\n}\n\nmodel User {\n  id       Int     @id @default(autoincrement())\n  email    String  @unique\n  name     String?\n  password String\n}\n\nmodel Invoice {\n  id          Int      @id @default(autoincrement())\n  vendor_name String\n  amount      Decimal\n  due_date    DateTime\n  description String\n  user_id     Int\n  paid        Boolean\n}\n",
-  "inlineSchemaHash": "bf9c61208024a9d45beb95152648611b7ad5b9f9cfdd6e94849cfedc36a99f0d",
+  "inlineSchema": "generator client {\n  provider      = \"prisma-client-js\"\n  output        = \"client\"\n  binaryTargets = [\"linux-musl-openssl-3.0.x\", \"windows\"]\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel User {\n  id       Int     @id @default(autoincrement())\n  email    String  @unique\n  name     String?\n  password String\n}\n\nmodel Invoice {\n  id          Int      @id @default(autoincrement())\n  vendor_name String\n  amount      Decimal\n  due_date    DateTime\n  description String\n  user_id     Int\n  paid        Boolean\n}\n",
+  "inlineSchemaHash": "33ecf9004b4973a5a58ea74853d038b1209a2ed27ac58e6ea65e0d9dfa141d03",
   "copyEngine": true
 }
 
