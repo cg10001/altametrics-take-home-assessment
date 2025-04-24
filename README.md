@@ -1,7 +1,8 @@
-Did not have time to finish finish the server portion of the assessment. To test the client:
+Current frontend server is still a WIP. Backend client is fully testable. 
 
+# Testing Client 
 1. Run `docker compose up --build`
-2. Wait for this block of code to appear. This code means that the server and database are up and running:
+2. Wait for this block of code to appear. This log within the terminal means that the server and database are up and running:
 ```
 server-1  | [Nest] 277  - 04/24/2025, 9:05:39 PM     LOG [NestFactory] Starting Nest application...                                                                                                                                      
 server-1  | [Nest] 277  - 04/24/2025, 9:05:39 PM     LOG [InstanceLoader] AppModule dependencies initialized +21ms
