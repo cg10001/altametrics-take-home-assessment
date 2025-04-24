@@ -2004,7 +2004,7 @@ export namespace Prisma {
     id: number | null
     vendor_name: string | null
     amount: Decimal | null
-    due_date: Date | null
+    due_date: string | null
     description: string | null
     user_id: number | null
     paid: boolean | null
@@ -2014,7 +2014,7 @@ export namespace Prisma {
     id: number | null
     vendor_name: string | null
     amount: Decimal | null
-    due_date: Date | null
+    due_date: string | null
     description: string | null
     user_id: number | null
     paid: boolean | null
@@ -2165,7 +2165,7 @@ export namespace Prisma {
     id: number
     vendor_name: string
     amount: Decimal
-    due_date: Date
+    due_date: string
     description: string
     user_id: number
     paid: boolean
@@ -2239,7 +2239,7 @@ export namespace Prisma {
       id: number
       vendor_name: string
       amount: Prisma.Decimal
-      due_date: Date
+      due_date: string
       description: string
       user_id: number
       paid: boolean
@@ -2669,7 +2669,7 @@ export namespace Prisma {
     readonly id: FieldRef<"Invoice", 'Int'>
     readonly vendor_name: FieldRef<"Invoice", 'String'>
     readonly amount: FieldRef<"Invoice", 'Decimal'>
-    readonly due_date: FieldRef<"Invoice", 'DateTime'>
+    readonly due_date: FieldRef<"Invoice", 'String'>
     readonly description: FieldRef<"Invoice", 'String'>
     readonly user_id: FieldRef<"Invoice", 'Int'>
     readonly paid: FieldRef<"Invoice", 'Boolean'>
@@ -3148,20 +3148,6 @@ export namespace Prisma {
 
 
   /**
-   * Reference to a field of type 'DateTime'
-   */
-  export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime'>
-    
-
-
-  /**
-   * Reference to a field of type 'DateTime[]'
-   */
-  export type ListDateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime[]'>
-    
-
-
-  /**
    * Reference to a field of type 'Boolean'
    */
   export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
@@ -3241,7 +3227,7 @@ export namespace Prisma {
     id?: IntFilter<"Invoice"> | number
     vendor_name?: StringFilter<"Invoice"> | string
     amount?: DecimalFilter<"Invoice"> | Decimal | DecimalJsLike | number | string
-    due_date?: DateTimeFilter<"Invoice"> | Date | string
+    due_date?: StringFilter<"Invoice"> | string
     description?: StringFilter<"Invoice"> | string
     user_id?: IntFilter<"Invoice"> | number
     paid?: BoolFilter<"Invoice"> | boolean
@@ -3264,7 +3250,7 @@ export namespace Prisma {
     NOT?: InvoiceWhereInput | InvoiceWhereInput[]
     vendor_name?: StringFilter<"Invoice"> | string
     amount?: DecimalFilter<"Invoice"> | Decimal | DecimalJsLike | number | string
-    due_date?: DateTimeFilter<"Invoice"> | Date | string
+    due_date?: StringFilter<"Invoice"> | string
     description?: StringFilter<"Invoice"> | string
     user_id?: IntFilter<"Invoice"> | number
     paid?: BoolFilter<"Invoice"> | boolean
@@ -3292,7 +3278,7 @@ export namespace Prisma {
     id?: IntWithAggregatesFilter<"Invoice"> | number
     vendor_name?: StringWithAggregatesFilter<"Invoice"> | string
     amount?: DecimalWithAggregatesFilter<"Invoice"> | Decimal | DecimalJsLike | number | string
-    due_date?: DateTimeWithAggregatesFilter<"Invoice"> | Date | string
+    due_date?: StringWithAggregatesFilter<"Invoice"> | string
     description?: StringWithAggregatesFilter<"Invoice"> | string
     user_id?: IntWithAggregatesFilter<"Invoice"> | number
     paid?: BoolWithAggregatesFilter<"Invoice"> | boolean
@@ -3347,7 +3333,7 @@ export namespace Prisma {
   export type InvoiceCreateInput = {
     vendor_name: string
     amount: Decimal | DecimalJsLike | number | string
-    due_date: Date | string
+    due_date: string
     description: string
     user_id: number
     paid: boolean
@@ -3357,7 +3343,7 @@ export namespace Prisma {
     id?: number
     vendor_name: string
     amount: Decimal | DecimalJsLike | number | string
-    due_date: Date | string
+    due_date: string
     description: string
     user_id: number
     paid: boolean
@@ -3366,7 +3352,7 @@ export namespace Prisma {
   export type InvoiceUpdateInput = {
     vendor_name?: StringFieldUpdateOperationsInput | string
     amount?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
-    due_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    due_date?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     user_id?: IntFieldUpdateOperationsInput | number
     paid?: BoolFieldUpdateOperationsInput | boolean
@@ -3376,7 +3362,7 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     vendor_name?: StringFieldUpdateOperationsInput | string
     amount?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
-    due_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    due_date?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     user_id?: IntFieldUpdateOperationsInput | number
     paid?: BoolFieldUpdateOperationsInput | boolean
@@ -3386,7 +3372,7 @@ export namespace Prisma {
     id?: number
     vendor_name: string
     amount: Decimal | DecimalJsLike | number | string
-    due_date: Date | string
+    due_date: string
     description: string
     user_id: number
     paid: boolean
@@ -3395,7 +3381,7 @@ export namespace Prisma {
   export type InvoiceUpdateManyMutationInput = {
     vendor_name?: StringFieldUpdateOperationsInput | string
     amount?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
-    due_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    due_date?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     user_id?: IntFieldUpdateOperationsInput | number
     paid?: BoolFieldUpdateOperationsInput | boolean
@@ -3405,7 +3391,7 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     vendor_name?: StringFieldUpdateOperationsInput | string
     amount?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
-    due_date?: DateTimeFieldUpdateOperationsInput | Date | string
+    due_date?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     user_id?: IntFieldUpdateOperationsInput | number
     paid?: BoolFieldUpdateOperationsInput | boolean
@@ -3549,17 +3535,6 @@ export namespace Prisma {
     not?: NestedDecimalFilter<$PrismaModel> | Decimal | DecimalJsLike | number | string
   }
 
-  export type DateTimeFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
-  }
-
   export type BoolFilter<$PrismaModel = never> = {
     equals?: boolean | BooleanFieldRefInput<$PrismaModel>
     not?: NestedBoolFilter<$PrismaModel> | boolean
@@ -3623,20 +3598,6 @@ export namespace Prisma {
     _max?: NestedDecimalFilter<$PrismaModel>
   }
 
-  export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedDateTimeFilter<$PrismaModel>
-    _max?: NestedDateTimeFilter<$PrismaModel>
-  }
-
   export type BoolWithAggregatesFilter<$PrismaModel = never> = {
     equals?: boolean | BooleanFieldRefInput<$PrismaModel>
     not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
@@ -3667,10 +3628,6 @@ export namespace Prisma {
     decrement?: Decimal | DecimalJsLike | number | string
     multiply?: Decimal | DecimalJsLike | number | string
     divide?: Decimal | DecimalJsLike | number | string
-  }
-
-  export type DateTimeFieldUpdateOperationsInput = {
-    set?: Date | string
   }
 
   export type BoolFieldUpdateOperationsInput = {
@@ -3799,17 +3756,6 @@ export namespace Prisma {
     not?: NestedDecimalFilter<$PrismaModel> | Decimal | DecimalJsLike | number | string
   }
 
-  export type NestedDateTimeFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
-  }
-
   export type NestedBoolFilter<$PrismaModel = never> = {
     equals?: boolean | BooleanFieldRefInput<$PrismaModel>
     not?: NestedBoolFilter<$PrismaModel> | boolean
@@ -3829,20 +3775,6 @@ export namespace Prisma {
     _sum?: NestedDecimalFilter<$PrismaModel>
     _min?: NestedDecimalFilter<$PrismaModel>
     _max?: NestedDecimalFilter<$PrismaModel>
-  }
-
-  export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedDateTimeFilter<$PrismaModel>
-    _max?: NestedDateTimeFilter<$PrismaModel>
   }
 
   export type NestedBoolWithAggregatesFilter<$PrismaModel = never> = {

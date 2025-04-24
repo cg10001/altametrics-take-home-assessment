@@ -43,7 +43,6 @@ RUN --mount=type=bind,source=package.json,target=package.json \
 COPY . .
 # Run the build script.
 RUN npm run build
-
 ################################################################################
 # Create a new stage to run the application with minimal runtime dependencies
 # where the necessary files are copied from the build stage.
@@ -63,9 +62,9 @@ COPY package.json .
 COPY --chown=node:node --from=deps /usr/src/app/node_modules ./node_modules
 COPY --chown=node:node --from=build /usr/src/app/dist ./dist
 COPY --chown=node:node tsconfig.json .
-COPY --chown=node:node prisma ./prisma/
+COPY --chown=node:node prisma ./prisma
 # Expose the port that the application listens on.
 EXPOSE 3000
 
 # Run the application.
-CMD ["npm", "start"]
+CMD ["sh", "-c", "npm run db:deploy && npm start"]

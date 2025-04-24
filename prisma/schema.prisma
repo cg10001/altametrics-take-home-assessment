@@ -20,7 +20,7 @@ model Invoice {
   id          Int     @id @default(autoincrement())
   vendor_name String
   amount      Decimal
-  due_date    DateTime
+  due_date    String
   description String
   user_id     Int
   paid        Boolean

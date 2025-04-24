@@ -7,13 +7,11 @@ export class InvoiceController {
 
   @Get()
   async getInvoices() {
-    console.log("testing")
     return await this.prismaService.getAllInvoices();
   }
 
   @Get(':id')
   async getInvoiceById(id: number) {
-    console.log("testing2")
     return await this.prismaService.getInvoiceById(id);
   }
 }
