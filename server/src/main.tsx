@@ -6,10 +6,8 @@ import { store } from "./app/store"
 import "./index.css"
 
 const container = document.getElementById("root")
-
 if (container) {
   const root = createRoot(container)
-
   root.render(
     <StrictMode>
       <Provider store={store}>

@@ -1,9 +1,11 @@
+import axios from "axios"
 import "./App.css"
-import { Counter } from "./features/counter/Counter"
-import { Quotes } from "./features/quotes/Quotes"
 import logo from "./logo.svg"
 
-export const App = () => (
+export const App = () =>{ 
+  console.log("help")
+  void axios.get("http://localhost:3000/invoices").then((result)=> { console.log(result); })
+  return (
   <div className="App">
     <header className="App-header">
       <img src={logo} className="App-logo" alt="logo" />
@@ -62,3 +64,4 @@ export const App = () => (
     </header>
   </div>
 )
+}
