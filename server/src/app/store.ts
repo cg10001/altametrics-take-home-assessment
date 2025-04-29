@@ -1,15 +1,12 @@
-import { configureStore } from '@reduxjs/toolkit'
+import { combineSlices, configureStore } from '@reduxjs/toolkit'
 import { invoiceSlice } from './invoiceSlice'
 import { userSlice } from './userSlice'
 
+export const rootReducer = combineSlices(userSlice, invoiceSlice)
 export const store = configureStore({
-  reducer: {
-    user: userSlice,
-    invoice: invoiceSlice
-  },
+  reducer: rootReducer
 })
 
-// Infer the `RootState` and `AppDispatch` types from the store itself
 export type RootState = ReturnType<typeof store.getState>
-// Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
+
 export type AppDispatch = typeof store.dispatch
