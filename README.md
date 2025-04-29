@@ -25,8 +25,9 @@ server-1  | [Nest] 277  - 04/24/2025, 9:05:39 PM     LOG [RouterExplorer] Mapped
 server-1  | [Nest] 277  - 04/24/2025, 9:05:39 PM     LOG [NestApplication] Nest application successfully started +3ms   
 ```
 3. From the root directory in the terminal, run `cd client`
-4. Run `npm run dev`
-5. Wait for this code block to appear. It means the frontend is up and running.
+4. Run `npm install`
+5. Run `npm run dev`
+6. Wait for this code block to appear. It means the frontend is up and running.
 ```
 > vite-template-redux@0.0.0 dev
 > vite
@@ -40,7 +41,7 @@ server-1  | [Nest] 277  - 04/24/2025, 9:05:39 PM     LOG [NestApplication] Nest 
   ➜  press h + enter to show help
 
 ```
-6. Visit  http://localhost:5173/ and login. There are two different logins, both will result in different invoices appearing.
+7. Visit  http://localhost:5173/ and login. There are two different logins, both will result in different invoices appearing.
 ```
 email: username@email.com
 password: password
