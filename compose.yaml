@@ -1,7 +1,7 @@
 services:
   server:
     build:
-      context: ./client
+      context: ./server
     environment:
       NODE_ENV: production
       DATABASE_URL: postgresql://postgres:postgres@altametrics-take-home-assessment-db-1:5432/postgres?schema=public
@@ -10,8 +10,7 @@ services:
     depends_on:
        db:
          condition: service_healthy
-
-
+         
   db:
     image: postgres
     restart: always
