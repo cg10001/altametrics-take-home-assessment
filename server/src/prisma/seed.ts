@@ -1,3 +1,4 @@
+import { z } from 'zod';
 import { PrismaClient, Invoice, User, Prisma } from '../../prisma/client';
 import * as bcrypt from 'bcryptjs';
 
@@ -21,18 +22,28 @@ function createInvoice(
   };
 }
 
+const userSchema = z.object({
+  id: z.number(),
+  email: z.string().min(3).includes('@'),
+  name: z.string().min(1),
+  password: z.string().min(5),
+});
+
 function createUser(
   id: number,
   email: string,
   name: string,
   password: string,
 ): User {
-  return {
+  const user: User = {
     id: id,
     email: email,
     name: name,
     password: password,
   };
+
+  userSchema.parse(user);
+  return user;
 }
 
 async function main() {
