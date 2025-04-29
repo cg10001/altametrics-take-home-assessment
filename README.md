@@ -1,5 +1,5 @@
 # Introduction
-This is a take home assessment for Altametrics. It's purpose is to build a small React application that will allow the user to login and view invoices. For simplicity's sake, many variables that would be secret or environmental variables are within the code, and the JWT token is stored in the Redux store. In a real application, these would be securely stored using appropriate methods (such as a http cookie in the case of the JWT token). Additionally, if more time was spent on this project, focus would be on refactoring code for maintainability (increase type-safety, creating separate files for repeated React components, etc)
+This is a take home assessment for Altametrics. It's purpose is to build a small React application that will allow the user to login and view invoices. For simplicity's sake, many variables that would be secret or environmental variables are within the code, and the JWT token is stored in the Redux store. In a real application, these would be securely stored using appropriate methods (such as a http cookie in the case of the JWT token). Additionally, there are improvements that could be made in order to increase code maintainability (increased type-safety, creating separate files for repeated React components and functions, refactoring, etc).
 
 # Prerequisites
 1. Install Docker
