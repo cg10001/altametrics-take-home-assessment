@@ -7,10 +7,8 @@
     "module": "ESNext",
     "skipLibCheck": true,
     "baseUrl": "../client",
-      "paths": {
-        "@/*": [
-          "../client/src/*"
-        ]
+    "paths": {
+      "@/*": ["../client/src/*"]
     },
     /* Bundler mode */
     "moduleResolution": "bundler",
