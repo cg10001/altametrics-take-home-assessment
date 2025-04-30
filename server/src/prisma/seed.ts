@@ -2,6 +2,16 @@ import { z } from 'zod';
 import { PrismaClient, Invoice, User, Prisma } from '../../prisma/client';
 import * as bcrypt from 'bcryptjs';
 
+const invoiceSchema = z.object({
+  id: z.number(),
+  vendor_name: z.string().min(3),
+  amount: z.instanceof(Prisma.Decimal),
+  due_date: z.string().length(8).includes('/'),
+  description: z.string().optional(),
+  user_id: z.number(),
+  paid: z.boolean(),
+});
+
 function createInvoice(
   id: number,
   vendor_name: string,
@@ -11,7 +21,7 @@ function createInvoice(
   user_id: number,
   paid: boolean,
 ): Invoice {
-  return {
+  const invoice = {
     id: id,
     vendor_name: vendor_name,
     amount: new Prisma.Decimal(amount),
@@ -20,6 +30,8 @@ function createInvoice(
     user_id: user_id,
     paid: paid,
   };
+  invoiceSchema.parse(invoice);
+  return invoice;
 }
 
 const userSchema = z.object({
@@ -41,7 +53,6 @@ function createUser(
     name: name,
     password: password,
   };
-
   userSchema.parse(user);
   return user;
 }
